@@ -46,8 +46,8 @@ const githubAPI = axios.create({
   baseURL: "https://api.github.com",
   headers: {
     Accept: "application/vnd.github+json",
-    ...(process.env.GITHUB_TOKEN
-      ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` }
+    ...(process.env.GH_TOKEN
+      ? { Authorization: `Bearer ${process.env.GH_TOKEN}` }
       : {}),
   },
 });
