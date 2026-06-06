@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: github-repo-explorer-api
+    runtime: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GITHUB_TOKEN
+        sync: false   # set this manually in the Render dashboard
+      - key: CLIENT_URL
+        sync: false   # set this to your Vercel frontend URL e.g. https://your-app.vercel.app

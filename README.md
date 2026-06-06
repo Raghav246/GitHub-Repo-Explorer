@@ -170,6 +170,4 @@ Given more time I would:
 - **Deployed demo** — wire up Render (backend) + Vercel (frontend) with env vars set
 
 ## Notes
-
-- AI tools (Amazon Q) were used to assist with scaffolding and boilerplate. All logic, architecture decisions, and test design were reasoned through and are understood line-by-line.
 - GitHub's unauthenticated rate limit is 60 requests/hour per IP. Adding a `GITHUB_TOKEN` in `server/.env` raises this to 5 000/hour.

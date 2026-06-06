@@ -5,7 +5,21 @@ const axios = require("axios");
 const app = express();
 const CACHE_TTL_MS = 60 * 1000;
 
-app.use(cors());
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://localhost:4173",
+  process.env.CLIENT_URL,
+].filter(Boolean);
+
+app.use(
+  cors({
+    origin: (origin, cb) => {
+      // allow non-browser requests (curl, tests) and listed origins
+      if (!origin || allowedOrigins.includes(origin)) return cb(null, true);
+      cb(new Error(`CORS: origin ${origin} not allowed`));
+    },
+  })
+);
 app.use(express.json());
 
 const cache = {};
