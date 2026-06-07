@@ -54,6 +54,10 @@ const githubAPI = axios.create({
   },
 });
 
+app.get("/", (req, res) => {
+  res.json({ status: "ok", message: "GitHub Repo Explorer API is running." });
+});
+
 app.get("/api/users/:username", async (req, res) => {
   const { username } = req.params;
   const page = parseInt(req.query.page) || 1;
