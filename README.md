@@ -176,4 +176,4 @@ Given more time I would:
 
 ## Notes
 - GitHub's unauthenticated rate limit is 60 requests/hour per IP. Adding a `GH_TOKEN` in `server/.env` raises this to 5 000/hour.
-- AI tools (Amazon Q) were used to assist with scaffolding. All logic and architecture decisions are understood line-by-line.
+-AI Tools help is used.
