@@ -4,8 +4,8 @@ A full-stack web app where you type a GitHub username and instantly see their pu
 
 ## Live Demo
 
-- Frontend: *(deploy to Vercel/Netlify and add link here)*
-- Backend: *(deploy to Render/Railway and add link here)*
+- Frontend: https://git-hub-repo-explorer-prod.vercel.app
+- Backend: https://github-repo-explorer-production-3a78.up.railway.app
 
 ## Tech Stack
 
@@ -116,7 +116,7 @@ GitHub-Repo-Explorer/
 │   │   ├── api/
 │   │   │   └── github.js        # fetch wrapper calling /api
 │   │   ├── components/
-│   │   │   ├── SearchBar.jsx    # debounced search input
+│   │   │   ├── SearchBar.jsx    # search input with form submit
 │   │   │   ├── UserProfile.jsx  # avatar, name, bio, stats
 │   │   │   ├── RepoList.jsx     # sort controls + list container
 │   │   │   ├── RepoCard.jsx     # expandable repo row
@@ -144,7 +144,7 @@ GitHub-Repo-Explorer/
 
 ## Features Implemented
 
-- Search by GitHub username with debounced search-as-you-type (500 ms)
+- Search by GitHub username, search triggers on form submit (Enter or Search button)
 - User profile: avatar, name, bio, followers, following, repo count
 - Repository list with name, description, language dot, stars, last updated
 - Click any repo card to expand: forks, open issues, default branch
@@ -167,7 +167,13 @@ Given more time I would:
 - **Auth** — add GitHub OAuth so users get a higher personal rate limit (5 000 → their own quota)
 - **Search within repos** — a client-side filter input to narrow the repo list by name
 - **CI/CD** — a GitHub Actions workflow that runs `npm test` on every PR
-- **Deployed demo** — wire up Render (backend) + Vercel (frontend) with env vars set
+- **Language chart** (already listed above, removing duplicate)
+
+## Deployment
+
+- Frontend deployed on **Vercel**: https://git-hub-repo-explorer-prod.vercel.app
+- Backend deployed on **Railway**: https://github-repo-explorer-production-3a78.up.railway.app
 
 ## Notes
-- GitHub's unauthenticated rate limit is 60 requests/hour per IP. Adding a `GITHUB_TOKEN` in `server/.env` raises this to 5 000/hour.
+- GitHub's unauthenticated rate limit is 60 requests/hour per IP. Adding a `GH_TOKEN` in `server/.env` raises this to 5 000/hour.
+- AI tools (Amazon Q) were used to assist with scaffolding. All logic and architecture decisions are understood line-by-line.
